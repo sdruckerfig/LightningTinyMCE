@@ -1,0 +1,17 @@
+<aura:component >
+	<aura:attribute name="sampledata" type="String" default="This is a test" />
+    
+    <c:TinyMCE name="testeditor2" 
+       label="All options enabled"
+       labelClass="formattedLabel"
+       toolbar="undo redo | styleselect | removeformat | bold italic | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | link image | forecolor backcolor emoticons | table | spellcheck | ltr rtl | code | fullscreen"
+       toolbar1="print preview media"
+       height="300"
+       statusbar="true"
+       showMenubar="true"
+       value="{!v.sampledata}" 
+       aura:id="myeditor"/>
+	
+    <ui:button label="Show Data" press="{!c.showData}" />
+    <ui:button label="Reset Content" press="{!c.resetContent}" />
+</aura:component>

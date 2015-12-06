@@ -1,0 +1,84 @@
+<aura:documentation>
+	<aura:description>
+    	This component enables you to easily surface a highly-configurable TinyMCE Wysiwyg editor from
+        within your Lightning applications and VisualForce pages.
+        
+        <p>
+            Developed by: <br />
+            Steve Drucker<br />
+            Fig Leaf Software <br />
+            <a href="http://www.figleaf.com">www.figleaf.com</a><br />
+            <a href="mailto:sdrucker@figleaf.com">sdrucker@figleaf.com</a><br />
+            Personal Blog: <a href="http://druckit.wordpress.com">druckit.wordpress.com</a><br />
+            GitHub Repo: <a href="http://www.github.com/sdruckerfig/LightningTinyMCE">http://www.github.com/sdruckerfig/LightningTinyMCE</a><br />   
+        </p>
+        
+        <p>Supported Toolbar options:</p>
+         
+        <table>
+        	<tr>
+            	<td>
+                    <ul>
+                     <li>undo</li>
+                     <li>redo</li>
+                     <li>removeformat</li>
+                     <li>bullist</li>
+                     <li>numlist</li>
+                     <li>outdent</li>
+                     <li>indent</li>
+                     <li>table</li>
+                     <li>spellcheck</li>
+                     <li>print</li>
+                    </ul>
+                </td>
+                <td>
+                     <ul>
+                     <li>styleselect</li>
+                     <li>bold</li>
+                     <li>italic</li>
+                     <li>underline</li>
+                     <li>strikethrough</li>
+                     <li>forecolor</li>
+                     <li>backcolor</li>
+                    </ul>
+                </td>
+                <td>
+                     <ul>
+                     <li>alignleft</li>
+                     <li>aligncenter</li>
+                     <li>alignright</li>
+                     <li>alignjustify</li>
+                     <li>rtl</li>
+                     <li>ltr</li>
+                     <li>link</li>
+                     <li>image</li>
+                     <li>emoticons</li>
+                     <li>code</li>
+                     <li>fullscreen</li>
+                    </ul>
+                </td>
+            </tr>
+        </table>
+        
+        <p>Release Notes, v 1.0, 04-12-2015:</p>
+        <ul>
+        	<li>"preview" button doesn't work due to CSP</li>
+        </ul>
+        
+        <div>SVG Icon made by <a href="http://www.freepik.com" title="Freepik">Freepik</a> from <a href="http://www.flaticon.com" title="Flaticon">www.flaticon.com</a>  is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0">CC BY 3.0</a></div>
+
+        
+    </aura:description>
+	
+    <aura:example name="Example1" 
+                  ref="figleaf:TinyMCEExample1" 
+                  label="Example 1"  
+                  value="This is some text" />
+	
+    
+    <aura:example name="Example2" 
+                  ref="figleaf:TinyMCEExample2" 
+                  label="Example 2 - demoing all features"
+                  value="This is some text" />
+	
+</aura:documentation>

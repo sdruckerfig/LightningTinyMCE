@@ -1,0 +1,154 @@
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable">
+    
+    <ltng:require scripts="/resource/TinyMCE/tinymce/js/tinymce/tinymce.min.js"
+                  afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+    
+    <aura:attribute name="name" 
+                    type="String" 
+                    access="GLOBAL" 
+                    description="field name"
+                    required="true"
+                    />   
+    
+    <aura:attribute name="label" 
+                    type="String" 
+                    access="GLOBAL" 
+                    description="field label"
+                    required="true"
+                    /> 
+    
+    <aura:attribute name="labelClass" 
+                    type="String" 
+                    access="GLOBAL" 
+                    description="field label css class"
+                    required="false"
+                    default=""/> 
+    
+    <aura:attribute name="value" 
+                    type="String" 
+                    access="GLOBAL" 
+                    description="field value"
+                    required="false"
+                    /> 
+    
+    <aura:attribute name="width" 
+                    type="String" 
+                    access="GLOBAL" 
+                    description="Width of wysiwyg editor - must be a number"
+                    required="false"
+                    default=""
+                    /> 
+    
+    <aura:attribute name="height" 
+                    type="String" 
+                    access="GLOBAL" 
+                    description="Sets the height of the editable area only. It does not include the space required for the menubar, toolbars or status bar. Must be expressed as a Number"
+                    required="false"
+                    default=""
+                    /> 
+    
+    <aura:attribute name="resize" 
+                    type="Boolean" 
+                    access="GLOBAL" 
+                    description="Enable user to resize the editor"
+                    required="false"
+                    default="true"
+                    /> 
+    
+    <aura:attribute name="showMenubar" 
+                    type="Boolean" 
+                    access="GLOBAL" 
+                    description="Display menu bar"
+                    required="false"
+                    default="false"/> 
+    
+    <aura:attribute name="menubar" 
+                    type="String" 
+                    access="GLOBAL" 
+                    description="Menu bar options"
+                    required="false"
+                    default="file edit insert view format table tools"/> 
+    
+    <aura:attribute name="statusbar"
+                    type="Boolean"
+                    access="GLOBAL"
+                    description=" allows you to specify whether or not TinyMCE should display the status bar at the bottom of the editor."
+                    required="false"
+                    default="true" />
+    
+    <aura:attribute name="browser_spellcheck"
+                    type="Boolean"
+                    access="GLOBAL"
+                    description="One of the several spell checking options developers have available is to use the browser's native spell checker."
+                    required="false"
+                    default="false" />
+    
+    <aura:attribute name="pasteWordValidElements"
+                    type="String"
+                    access="GLOBAL"
+                    description="enables you to configure the valid_elements specific to MS Office. Word produces a lot of junk HTML so when users paste things from Word we do extra restrictive filtering on it to remove as much of this as possible. This option enables you to specify which elements and attributes you want to include when Word contents are intercepted."
+                    required="false"
+                    default="b,strong,i,em,h1,h2" />
+    
+    <aura:attribute name="toolbar"
+                    type="String"
+                    access="GLOBAL"
+                    description="Toolbar Options"
+                    required="false"
+                    default="undo redo | cut copy paste | styleselect | bold italic underline | alignleft aligncenter alignright alignjustify | removeformat | bullist numlist outdent indent | link | table | fullscreen" />
+    
+    <aura:attribute name="toolbar1"
+                    type="String"
+                    access="GLOBAL"
+                    description="Toolbar1 Options"
+                    required="false"
+                    default="" />
+    
+    <aura:attribute name="toolbar2"
+                    type="String"
+                    access="GLOBAL"
+                    description="Toolbar2 Options"
+                    required="false"
+                    default="" />
+    
+    <aura:attribute name="contextMenu"
+                    type="String"
+                    access="GLOBAL"
+                    description="Allows you to specify which items should appear on TinyMCE's context menu, e.g. 'link image inserttable | cell row column deletetable'"
+                    required="false"
+                    default="" />
+    
+    <aura:attribute name="plugins"
+                    type="String"
+                    access="GLOBAL"
+                    description="TinyMCE plugins to load"
+                    required="false"
+                    default="" />
+    
+    <aura:attribute name="contentCss"
+                    type="String"
+                    access="GLOBAL"
+                    description="It is usually desirable that TinyMCE's editable area has the same styling as the surrounding content. This can be achieved with the content_css option, which enables you to extend external css into the editable area.The css file used in this setting should be the same css file that controls the look/style of all your pages. So, let's say you include a file myLayout.css in all your pages to control your site's global appearance, then this file must be set as your content_css value. Doing this will ensure the content in the editable area will also have your site's style. Note that the CSS file must be uploaded as a static resource"
+                    required="false"
+                    default="" />
+    
+    <aura:attribute name="language"
+                    type="String"
+                    access="GLOBAL"
+                    description="This option allows you to specify the language that TinyMCE's user interface will appear in. That is, the toolbar buttons and menu items. By default, TinyMCE will use US English as the language of the interface. See https://tinymce.com/docs/configure/localization/ for information about how to download and install language packs"
+                    required="false"
+                    default="en_US" />
+    
+    
+    <aura:handler name="change" 
+              value="{!v.value}" 
+              action="{!c.onChangeValue}" /> 
+    
+    <label for="{!v.name}" class="{!v.labelClass}">{!v.label}</label>
+    
+    <textarea name="{!v.name}" 
+              id="{!v.name}" 
+              aura:id="{!v.name}"
+              style="visibility:hidden">{!v.value}</textarea>
+    
+</aura:component>
