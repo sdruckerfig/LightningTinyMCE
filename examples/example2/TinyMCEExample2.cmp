@@ -1,4 +1,4 @@
-<aura:component >
+<aura:component access="GLOBAL" >
 	<aura:attribute name="sampledata" type="String" default="This is a test" />
     
     <c:TinyMCE name="testeditor2" 

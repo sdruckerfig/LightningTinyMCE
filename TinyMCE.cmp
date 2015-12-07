@@ -1,7 +1,15 @@
-<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable">
+<aura:component implements="flexipage:availableForAllPageTypes,force:appHostable" access="GLOBAL">
     
-    <ltng:require scripts="/resource/TinyMCE/tinymce/js/tinymce/tinymce.min.js"
-                  afterScriptsLoaded="{!c.afterScriptsLoaded}" />
+    <!--
+     <aura:attribute name="tinymcePath" 
+                    type="String" 
+                    access="GLOBAL" 
+                    description="Path to tinymce.min.js static resource"
+                    required="false"
+                    default="/resource/figleaf__TinyMCE/tinymce/js/tinymce/tinymce.min.js"
+                    />   
+    -->
+    
     
     <aura:attribute name="name" 
                     type="String" 
@@ -143,6 +151,9 @@
     <aura:handler name="change" 
               value="{!v.value}" 
               action="{!c.onChangeValue}" /> 
+    
+    <ltng:require scripts="/resource/figleaf__TinyMCE/tinymce/js/tinymce/tinymce.min.js"
+                  afterScriptsLoaded="{!c.afterScriptsLoaded}" />
     
     <label for="{!v.name}" class="{!v.labelClass}">{!v.label}</label>
     
